@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary Colors */
+  --color-bg-primary: #461e5c;
+  --color-bg-secondary: #3a1850;
+  --color-bg-tertiary: #2e1242;
+  --color-accent: #9d4edd;
+  --color-accent-light: #b76eef;
+  --color-accent-dark: #7b2dbf;
+  --color-accent-glow: rgba(157, 78, 221, 0.3);
+
+  /* Surface */
+  --color-surface-card: rgba(157, 78, 221, 0.08);
+  --color-surface-card-hover: rgba(157, 78, 221, 0.14);
+
+  /* Borders */
+  --color-border-subtle: rgba(157, 78, 221, 0.2);
+  --color-border-accent: rgba(157, 78, 221, 0.5);
+
+  /* Font Families */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ====== Global Styles ====== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-primary);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-light);
+}
+
+/* ====== Animations ====== */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(157, 78, 221, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(157, 78, 221, 0.4); }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
